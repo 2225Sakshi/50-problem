@@ -31,6 +31,33 @@ def numOfWays(M, N):
                     curr-=1
             ans=(ans+curr)%(10**9+7)
     return ans
+    
+    
+    
+    mod=1000000007
+    res=[]
+    for i in range(N):
+        for j in range(M):
+            count=M*N-1
+            if (i-2>=0 and j-1>=0):
+                count-=1
+            if (i-2>=0 and j+1<=N):
+                count-=1
+            if (i-1>=0 and j+2<=N):
+                count-=1
+            if (i+1 <=M and j+2<N):
+                count-=1
+            if (i+2<=M and j+1<=N):
+                count-=1
+            if (i+2<=M and j+1>=N):
+                count-=1
+            if (i+1<=M and j-2>=0):
+                count-=1
+            if (i-1>=0 and j-2>=0):
+                count-=1
+            
+            res=((res+count)%mod)
+    return res
             
     
         
