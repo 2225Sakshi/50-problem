@@ -32,7 +32,7 @@ def numOfWays(M, N):
             ans=(ans+curr)%(10**9+7)
     return ans
     
-    
+    # 2nd way 
     
     mod=1000000007
     res=[]
