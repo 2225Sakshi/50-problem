@@ -1,0 +1,52 @@
+#User function Template for python3
+
+
+class Solution:
+    def carpetBox(self, A,B,C,D):
+        a=min(A,B)
+        b=max(A,B)
+        c=min(C,D)
+        d=max(C,D)
+        count=0
+        while b>d:
+            b=b//2
+            count+=1
+            if b<a:
+                a,b=b,a
+        while a>c:
+            a=a//2
+            count+=1
+        return count
+        
+        
+        # if (A<=C and B<=D) or  (A<=D and B<=C):
+        #     return 0
+        # if (A>C and A>D):
+        #     return 1+self.carpetBox(A/2,B,C,D)
+        # if (B>C and B>D):
+        #     return 1+self.carpetBox(A,B/2,C,D)
+        # return min(1+self.carpetBox(A/2,B,C,D),1+self.carpetBox(A,B/2,C,D))
+        # #code here
+
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+def main():
+        T=int(input())
+        while(T>0):
+            A,B,C,D = map(int, input().split())
+            
+            obj = Solution()
+            print(obj.carpetBox(A,B,C,D))
+            
+            T-=1
+
+
+if __name__ == "__main__":
+    main()
+
+
+# } Driver Code Ends
